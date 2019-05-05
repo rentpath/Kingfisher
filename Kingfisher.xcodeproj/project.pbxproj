@@ -723,6 +723,26 @@
 				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Wei Wang";
 				TargetAttributes = {
+					4B2944471C3D01B20088C3E7 = {
+						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = "";
+					};
+					4B37667E1C478F940001443F = {
+						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0900;
+					};
+					D10EC2301C3D632300A4211C = {
+						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 1000;
+					};
+					D13F49D51BEDA67C00CE335D = {
+						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 1020;
+					};
+					D16799EA1C4E74460020FD12 = {
+						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0900;
+					};
 					D1ED2D341AD2D09F00CFC3EB = {
 						CreatedOnToolsVersion = 6.2;
 						LastSwiftMigration = 1020;
@@ -1057,6 +1077,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1105,6 +1126,7 @@
 				PRODUCT_NAME = Kingfisher;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
