@@ -34,13 +34,16 @@ public class SessionDataTask {
     public typealias CancelToken = Int
 
     struct TaskCallback {
-        let onProgress: Delegate<(Int64, Int64), Void>?
         let onCompleted: Delegate<Result<ImageLoadingResult, KingfisherError>, Void>?
         let options: KingfisherParsedOptionsInfo
     }
 
     /// Downloaded raw data of current task.
     public private(set) var mutableData: Data
+
+    // This is a copy of `task.originalRequest?.url`. It is for getting a race-safe behavior for a pitfall on iOS 13.
+    // Ref: https://github.com/onevcat/Kingfisher/issues/1511
+    let originalURL: URL?
 
     /// The underlying download task. It is only for debugging purpose when you encountered an error. You should not
     /// modify the content of this task or start it yourself.
@@ -71,6 +74,7 @@ public class SessionDataTask {
 
     init(task: URLSessionDataTask) {
         self.task = task
+        self.originalURL = task.originalRequest?.url
         mutableData = Data()
     }
 
@@ -101,9 +105,6 @@ public class SessionDataTask {
     func cancel(token: CancelToken) {
         guard let callback = removeCallback(token) else {
             return
-        }
-        if callbacksStore.count == 0 {
-            task.cancel()
         }
         onCallbackCancelled.call((token, callback))
     }
